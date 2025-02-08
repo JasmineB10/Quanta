@@ -35,7 +35,7 @@ export interface Message {
     chat_session_id: number;
     content: string;
     created_at: string;
-    senser: "ai" | "user";
+    sender: "ai" | "user";
 }
 
 export interface GetChatbotByIdResponse {
@@ -81,6 +81,14 @@ export interface GetChatSessionMessagesResponse
 
 export interface GetChatSessionMessagesVariables {
     id: number;
+}
+
+export interface MessagesByChatSessionIdResponse{
+    chat_sessions: ChatSession;
+}
+
+export interface MessagesByChatSessionIdVariables{
+    chat_session_id: number;
 }
 
 
