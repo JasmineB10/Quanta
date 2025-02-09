@@ -21,9 +21,9 @@ const formSchema = z.object({
   message: z.string().min(2, "Your Message is too short!")
 })
 
-function ChatbotPage({ params }: { params: Promise<{ id: string }> }) {
+function ChatbotPage({ params }: { params: { id: string } }) {
 
-    const {id} = use(params);
+    const {id} = params;
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");

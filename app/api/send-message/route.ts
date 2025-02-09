@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
             which is not relevant or in the same scope or domain as the points in mentioned in the 
             key information section, kindly inform the user they're only allowed to search for the
             specified content. Use Emoji;s where possible. Here is some key information that you need 
-            to be aware of, these are the lements you may be asked about: ${systemPrompt}`
+            to be aware of, these are the elements you may be asked about: ${systemPrompt}`
         },
         ...formattedPreviousMessages,
         {
@@ -70,9 +70,6 @@ export async function POST(req: NextRequest) {
             content: content,
         }
     ]
-
-    console.log("User name before sending:", name);
-    console.log("Sanitized User name:", sanitizedUserName);
 
 
     const openaiResponse = await openai.chat.completions.create({

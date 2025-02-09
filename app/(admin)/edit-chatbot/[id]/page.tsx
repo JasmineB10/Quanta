@@ -14,9 +14,9 @@ import { redirect } from "next/navigation";
 import { use, useEffect, useState } from "react";
 import { toast } from "sonner";
 
-function EditChatbot({ params }: { params: Promise<{ id: string }> }) {
+function EditChatbot({ params }: { params: { id: string } }) {
   //const { id } = useParams()
-  const { id } = use(params);
+  const { id } = params;
   const [url, setUrl] = useState<string | null>(null);
   const [newCharacteristic, setNewCharacteristic] = useState<string>("");
   const [chatbotName, setChatbotName] = useState<string>("");

@@ -9,8 +9,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import Avatar from "./Avatar";
-import { Link } from "lucide-react";
 import ReactTimeago from "react-timeago";
+import Link from "next/link";
 
 
 function ChatBotSessions({chatbots}: {chatbots: Chatbot[]}) {
@@ -32,7 +32,7 @@ function ChatBotSessions({chatbots}: {chatbots: Chatbot[]}) {
 
             return (
               <AccordionItem key={chatbot.id}
-              value={`item-$(chatbot.id)`}
+              value={`item-${chatbot.id}`}
               className="px-10 py-5">
 
                 {hasSessions ? (
@@ -48,7 +48,7 @@ function ChatBotSessions({chatbots}: {chatbots: Chatbot[]}) {
                         </div>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="space-y-5 p-5 bg-gray-100 rounded-md">
+                    <AccordionContent className="space-y-5 p-5 bg-gray-100 rounded-md ">
                        {chatbot.chat_sessions.map((session) => (
                         <Link
                          href={`/review-sessions/${session.id}`}
